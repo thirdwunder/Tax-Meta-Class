@@ -1051,7 +1051,7 @@ class Tax_Meta_Class {
 
       $multiple = in_array( $field['type'], array( 'checkbox_list', 'file', 'image' ) );
       $std = $multiple ? array() : '';
-      $format = 'date' == $field['type'] ? 'yy-mm-dd' : ( 'time' == $field['type'] ? 'HH:mm' : '' );
+      $format = 'date' == $field['type'] ? 'yy-mm-dd' : ( 'time' == $field['type'] ? 'hh:mm' : '' );
 
       $field = array_merge( array( 'multiple' => $multiple, 'std' => $std, 'desc' => '', 'format' => $format, 'validate_func' => '' ), $field );
 
@@ -1402,7 +1402,7 @@ class Tax_Meta_Class {
    *  @param $repeater bool  is this a field inside a repeatr? true|false(default)
    */
   public function addTime($id,$args,$repeater=false){
-    $new_field = array('type' => 'time','id'=> $id,'std' => '','style' =>'','desc' => '','format'=>'HH:mm','name' => 'Time Field','multiple' => false);
+    $new_field = array('type' => 'time','id'=> $id,'std' => '','style' =>'','desc' => '','format'=>'hh:mm','name' => 'Time Field','multiple' => false);
     $new_field = array_merge($new_field, $args);
     if(false === $repeater){
       $this->_fields[] = $new_field;
