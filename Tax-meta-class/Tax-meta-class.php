@@ -1374,11 +1374,11 @@ class Tax_Meta_Class {
    *    'desc' => // field description, string optional
    *    'std' => // default value, string optional
    *    'validate_func' => // validate function, string optional
-   *    'format' => // date format, default yy-mm-dd. Optional. Default "'d MM, yy'"  See more formats here: http://goo.gl/Wcwxn
+   *    'format' => // date format, default yy-mm-dd. Optional. Default "'yy-mm-dd'"  See more formats here: http://goo.gl/Wcwxn
    *  @param $repeater bool  is this a field inside a repeatr? true|false(default)
    */
   public function addDate($id,$args,$repeater=false){
-    $new_field = array('type' => 'date','id'=> $id,'style' =>'','std' => '','desc' => '','format'=>'d MM, yy','name' => 'Date Field','multiple' => false);
+    $new_field = array('type' => 'date','id'=> $id,'style' =>'','std' => '','desc' => '','format'=>'yy-mm-dd','name' => 'Date Field','multiple' => false);
     $new_field = array_merge($new_field, $args);
     if(false === $repeater){
       $this->_fields[] = $new_field;
